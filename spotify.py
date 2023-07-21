@@ -24,7 +24,7 @@ getParams = {
 #ping spotify with information and receive authorizaion URL and status code in object
 getAuthObj = requests.get('https://accounts.spotify.com/authorize', params=getParams)
  
- #open webpage if ping is successful
+ #open webpage if ping is successfulgit push -u origin main 
 if getAuthObj.status_code == 200:
     webbrowser.open(getAuthObj.url, new=2)
 else:
