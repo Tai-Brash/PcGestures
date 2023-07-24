@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3Ctext%20x='0'%20y='14'%3E☑️%3C/text%3E%3C/svg%3E" type="image/svg+xml" />
+    <title>What you chose</title>
+    <script>
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      const params = Object.fromEntries(urlSearchParams.entries());
+      const get_h1 = function () {
+        if (!!params && !!params["yesno_answer"]) {
+          return `I'm so happy you were able to make up your mind that your answer is "${params["yesno_answer"]}."`;
+        } else {
+          return "Looks like you couldn't make up your mind.";
+        }
+      };
+      const fill_in_h1 = function () {
+        document.getElementById("fill_me_in").innerHTML = get_h1();
+      };
+      window.onload = fill_in_h1;
+    </script>
+  </head>
+  <body>
+    <h1 id="fill_me_in"></h1>
+  </body>
+</html>
